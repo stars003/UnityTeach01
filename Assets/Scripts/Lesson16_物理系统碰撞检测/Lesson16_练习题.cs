@@ -13,7 +13,11 @@ public class Lesson16_练习题 : MonoBehaviour
     #endregion
 
     #region Lesson16 - 练习题三
+<<<<<<< Updated upstream
     //3.在上一题的基础上,在场景加入一些立方体,每个立方体被子弹打3 下就会消失
+=======
+    //3.在上一题的基础上,在场景加入一些立方体,每个立方体被子弹打 3 下就会消失
+>>>>>>> Stashed changes
 
 
     #endregion
@@ -24,17 +28,25 @@ public class Lesson16_练习题 : MonoBehaviour
     private float g; //炮管摆动
     private float cx; //摄像机水平转向
     private float cy; //摄像机垂直转向
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     private Transform 炮台;
     private Transform 炮管架;
     private Transform 摄像机;
     public float 速率; //速度系数
     public float 炮管最大仰角;
     public float 炮管最低压角;
+<<<<<<< Updated upstream
     public GameObject 炮弹;
 
     private GameObject 炮弹1;
+=======
+    public GameObject 炮弹预设体;
+    public Transform 弹药初始位置;
+>>>>>>> Stashed changes
 
     //把这道题的代码保留好, 之后的题会用到
     //
@@ -49,8 +61,11 @@ public class Lesson16_练习题 : MonoBehaviour
         炮台 = this.transform.Find("炮台");
         炮管架 = 炮台.Find("炮管架");
         摄像机 = this.transform.Find("Camera");
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -134,6 +149,7 @@ public class Lesson16_练习题 : MonoBehaviour
         //加入一个点击鼠标左键可以发射一颗子弹飞出的功能
         if (Input.GetMouseButtonDown(0))
         {
+<<<<<<< Updated upstream
             炮弹1 = GameObject.Instantiate(炮弹);
             炮弹 pd = 炮弹1.AddComponent<炮弹>();
 
@@ -146,6 +162,26 @@ public class Lesson16_练习题 : MonoBehaviour
         }
 
 
+=======
+            //炮弹1 = GameObject.Instantiate(炮弹预设体);
+            //实例化一个子弹对象
+            GameObject obj = GameObject.Instantiate(炮弹预设体);
+            //设置对象的位置
+            obj.transform.position = 弹药初始位置.position;
+            //设置对象的旋转角度
+            obj.transform.eulerAngles = 弹药初始位置.eulerAngles;
+            //给炮弹添加脚本
+            //炮弹 pd = obj.AddComponent<炮弹>();
+
+            //炮弹 pd = 炮弹1.AddComponent<炮弹>();
+            //炮弹1.transform.position = 炮管架.transform.TransformPoint(new Vector3(0, 0, 5.5f));
+            //发射子弹
+            //Rigidbody rb = 炮弹1.AddComponent<Rigidbody>();
+            //rb.useGravity = false;
+            //rb.AddForce(炮管架.forward * 速率 * 150);
+            //炮弹1.transform.Translate(炮弹1.transform.forward * 速率 * Time.deltaTime, Space.World);
+        }
+>>>>>>> Stashed changes
         #endregion
 
     }
